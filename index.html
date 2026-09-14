@@ -1162,4 +1162,657 @@
 
       <!-- Main character image placeholder -->
       <div class="hero-image-container" id="heroImageContainer">
-        <!-- Replace src with user's uploaded
+        <!-- Replace src with user's uploaded photo -->
+        <img 
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23222'/%3E%3Ccircle cx='200' cy='180' r='80' fill='%23f1c40f' opacity='0.3'/%3E%3Ctext x='200' y='320' font-family='Arial' font-size='24' fill='%23f1c40f' text-anchor='middle'%3EMAIN CHARACTER%3C/text%3E%3Ctext x='200' y='360' font-family='Arial' font-size='16' fill='%23666' text-anchor='middle'%3E(upload photo)%3C/text%3E%3C/svg%3E"
+          alt="Main Character"
+        />
+      </div>
+
+      <div class="hero-headline">
+        I'M BORED.<br>
+        <span class="highlight">CHALLENGE ME.</span>
+      </div>
+
+      <div class="hero-sub">THE INTERNET TELLS ME WHAT TO DO.</div>
+
+      <div class="hero-buttons">
+        <div class="note">
+          Give me a challenge in the comments.<br>
+          If your challenge gets picked,<br>
+          <strong>I HAVE TO DO IT.</strong>
+        </div>
+        <div class="rt-line">
+          <span>🔁 RT</span> this so more people can try to ruin my day.
+        </div>
+        <button class="cta-button" onclick="document.getElementById('submitForm').scrollIntoView({behavior:'smooth'})">
+          🔥 DAY 1 STARTS NOW
+        </button>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="number">2,481</div>
+          <div class="label">Challenges Submitted</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">856</div>
+          <div class="label">Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">124K</div>
+          <div class="label">Total Votes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works">
+      <h3>HOW IT WORKS</h3>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text">Submit a challenge <strong>(you pick category & difficulty).</strong></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text">People <strong>vote & share.</strong></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text">I choose a challenge.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text">I complete it <strong>(with proof).</strong></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-text">It becomes a newspaper story and goes viral on X.</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:14px; font-family:'Impact'; font-size:1.2rem; background:#000; color:#f1c40f; padding:8px; border:2px solid #000; box-shadow:4px 4px 0 #000;">
+        THE MORE YOU SHARE, THE BIGGER IT GETS! 👑
+      </div>
+    </section>
+
+    <!-- ========== KEY FEATURES ========== -->
+    <section class="features-grid">
+      <div class="feature-item">
+        <div class="icon">📝</div>
+        <div class="label">Challenge Submission (8 categories + 4 difficulties)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📰</div>
+        <div class="label">Challenge Feed (vote, share, view status)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">⚙️</div>
+        <div class="label">Admin Dashboard (manage challenges & imports)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">✅</div>
+        <div class="label">Challenge Completion (upload proof + share)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📰</div>
+        <div class="label">Newspaper Generator (automatic front page)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🏆</div>
+        <div class="label">Leaderboard & Points (track top challengers)</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">💾</div>
+        <div class="label">Local Storage (IndexedDB / localStorage)</div>
+      </div>
+      <div class="feature-item" style="background:#f1c40f; color:#000; border-color:#000;">
+        <div class="icon">🔥</div>
+        <div class="label" style="color:#000;">MOST CREATIVE WINS</div>
+      </div>
+    </section>
+
+    <!-- ========== SUBMISSION FORM ========== -->
+    <section id="submitForm" class="submission-card">
+      <div class="card-header">SUBMIT A CHALLENGE</div>
+      <form id="challengeForm">
+        <div class="form-group">
+          <label>X Username</label>
+          <input type="text" id="username" placeholder="@yourhandle" maxlength="30" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Challenge</label>
+          <textarea id="challengeText" placeholder="e.g. Wear a banana costume to the supermarket..." maxlength="180"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="category">
+            <option value="Funny">😂 Funny</option>
+            <option value="Embarrassing">😳 Embarrassing</option>
+            <option value="Food">🍔 Food</option>
+            <option value="Sport">🏃 Sport</option>
+            <option value="Public">📢 Public</option>
+            <option value="Creative">🎨 Creative</option>
+            <option value="Random">🎲 Random</option>
+            <option value="Crazy">🤪 Crazy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Difficulty</label>
+          <div class="difficulty-row">
+            <select id="difficulty">
+              <option value="Easy">😌 Easy</option>
+              <option value="Medium" selected>😬 Medium</option>
+              <option value="Hard">😰 Hard</option>
+              <option value="Insane">💀 Insane</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">🔥 SUBMIT CHALLENGE</button>
+      </form>
+    </section>
+
+    <!-- ========== CHALLENGE FEED ========== -->
+    <section class="feed-section">
+      <div class="feed-header">
+        <h2>🔥 CHALLENGES</h2>
+        <div class="count-badge" id="challengeCount">0</div>
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="submitted">Submitted</button>
+        <button data-filter="shortlisted">Shortlisted</button>
+        <button data-filter="accepted">Accepted</button>
+        <button data-filter="completed">Completed</button>
+      </div>
+      <div class="challenge-list" id="challengeList">
+        <!-- Dynamic challenges render here -->
+        <div class="empty-feed">No challenges yet... be the first! 😈</div>
+      </div>
+    </section>
+
+    <!-- ========== NEWSPAPER GENERATOR ========== -->
+    <section class="newspaper-section">
+      <div class="paper-header">
+        <div class="paper-title">The Daily Challenge</div>
+        <div class="paper-date">MONDAY, SEPTEMBER 14, 2026 · ISSUE #00421</div>
+      </div>
+      <div class="headline">LOCAL MAN TAKES ON THE INTERNET'S WILDEST CHALLENGE</div>
+      <div class="subhead">ONE COMMENT. ONE RIDICULOUS IDEA. HE ACTUALLY DID IT.</div>
+      <div class="article-body">
+        <div class="img-box">
+          <!-- Placeholder for the proof image -->
+          <img 
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ccc'/%3E%3Ctext x='50' y='55' font-family='Arial' font-size='12' fill='%23333' text-anchor='middle'%3EPROOF%3C/text%3E%3C/svg%3E"
+            alt="Challenge proof"
+          />
+        </div>
+        <div class="text-content">
+          <p><strong>Challenge #00421</strong> — Submitted by <strong>@CryptoKing</strong></p>
+          <p>In a scene that has since gone viral, local legend took on one of the internet's wildest challenges — wearing a banana costume to the supermarket. The challenge, submitted by @CryptoKing, was met with thousands of votes and support from the community.</p>
+          <p>"Some people just don't quit. And that's what makes this legendary."</p>
+        </div>
+      </div>
+      <div class="footer-note">THE DAILY CHALLENGE · SEPT 14 2026 · ISSUE #00421</div>
+      <button class="cta-button secondary" style="margin-top:10px; width:100%;" onclick="shareOnX()">𝕏 SHARE ON X</button>
+    </section>
+
+    <!-- ========== LEADERBOARD ========== -->
+    <section class="leaderboard-section">
+      <div class="lb-header">
+        <h3>🏆 TOP CHALLENGERS</h3>
+        <div class="lb-tabs">
+          <button class="active">Top Challengers</button>
+          <button>Special Awards</button>
+        </div>
+      </div>
+      <div class="leaderboard-list">
+        <div class="leaderboard-row">
+          <div class="rank">1</div>
+          <div class="user">@CryptoKing</div>
+          <div class="points">12,842 pts</div>
+        </div>
+        <div class="leaderboard-row">
+          <div class="rank">2</div>
+          <div class="user">@MemeLord</div>
+          <div class="points">10,421 pts</div>
+        </div>
+        <div class="leaderboard-row">
+          <div class="rank">3</div>
+          <div class="user">@SurfGirl</div>
+          <div class="points">9,884 pts</div>
+        </div>
+        <div class="leaderboard-row">
+          <div class="rank">4</div>
+          <div class="user">@FitBro</div>
+          <div class="points">8,732 pts</div>
+        </div>
+        <div class="leaderboard-row">
+          <div class="rank">5</div>
+          <div class="user">@ChaosAlex</div>
+          <div class="points">7,421 pts</div>
+        </div>
+      </div>
+      <div style="margin-top:12px; background:#111; border:2px solid #f1c40f; padding:10px; box-shadow:4px 4px 0 #000;">
+        <div style="font-family:'Impact'; color:#f1c40f; font-size:1rem; text-transform:uppercase;">🏅 AWARDS</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; font-family:'Arial'; font-size:0.75rem; color:#fff;">
+          <span>🏆 Most Chaotic @ChaosAlex</span>
+          <span>🎨 Most Creative @SurfGirl</span>
+          <span>📢 Most Voted @CryptoKing</span>
+          <span>😳 Most Embarrassing @MemeLord</span>
+          <span>💡 Craziest Idea @WillWill</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ADMIN DASHBOARD ========== -->
+    <section class="admin-section">
+      <div class="admin-header">
+        <h3>⚙️ ADMIN DASHBOARD</h3>
+        <div class="admin-actions">
+          <button onclick="loadSampleData()">📥 IMPORT X COMMENTS</button>
+          <button onclick="exportData()">📤 EXPORT DATA</button>
+          <button onclick="resetData()" style="background:#e74c3c; color:#fff;">🗑 RESET DATA</button>
+        </div>
+      </div>
+      <div style="font-family:'Impact'; color:#f1c40f; font-size:0.9rem; margin-bottom:8px;">ALL CHALLENGES (<span id="adminCount">0</span>)</div>
+      <div class="admin-list" id="adminList">
+        <!-- Dynamic admin rows -->
+      </div>
+    </section>
+
+    <!-- ========== LOCAL STORAGE ========== -->
+    <section class="storage-section">
+      <div class="storage-header">
+        💾 LOCAL STORAGE & DATA
+      </div>
+      <div style="font-family:'Arial'; font-size:0.8rem; color:#aaa; margin-bottom:8px;">
+        All data is stored locally using IndexedDB / localStorage.
+      </div>
+      <div class="storage-grid">
+        <div class="storage-item"><span class="check">✓</span> Challenges</div>
+        <div class="storage-item"><span class="check">✓</span> Users</div>
+        <div class="storage-item"><span class="check">✓</span> Votes</div>
+        <div class="storage-item"><span class="check">✓</span> Points & Leaderboard</div>
+        <div class="storage-item"><span class="check">✓</span> Completed Challenges</div>
+        <div class="storage-item"><span class="check">✓</span> Media Files</div>
+        <div class="storage-item"><span class="check">✓</span> Settings</div>
+      </div>
+      <div class="storage-buttons">
+        <button onclick="exportData()">📤 Export Data</button>
+        <button onclick="importData()">📥 Import Data</button>
+        <button onclick="resetData()" class="danger">🗑 Reset Data</button>
+        <button onclick="downloadBackup()">💾 Download Backup</button>
+        <button onclick="restoreBackup()">📂 Restore Backup</button>
+      </div>
+    </section>
+
+    <!-- ========== BOTTOM BAR ========== -->
+    <div class="bottom-bar">
+      <div class="logo-small">👑 CHALLENGE ME.</div>
+      <div class="steps">
+        <span>📥</span> SUBMIT → <span>📊</span> VOTE → <span>🔁</span> SHARE → <span>🏆</span> WIN
+      </div>
+      <div style="font-size:0.7rem; color:#f1c40f; width:100%; text-align:center; margin-top:4px;">
+        THE INTERNET TELLS ME WHAT TO DO.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast">🔥 CHALLENGE ADDED! 🔥</div>
+
+  <script>
+    (function() {
+      // ---------- STATE ----------
+      let challenges = [];
+      let currentFilter = 'all';
+      const STORAGE_KEY = 'challenge_me_data_v2';
+
+      // Load from localStorage
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          challenges = JSON.parse(stored);
+        } else {
+          // Seed with initial sample data for demo
+          challenges = getSampleChallenges();
+        }
+      } catch (e) {
+        console.warn('Failed to load challenges', e);
+        challenges = getSampleChallenges();
+      }
+
+      // DOM elements
+      const form = document.getElementById('challengeForm');
+      const usernameInput = document.getElementById('username');
+      const challengeInput = document.getElementById('challengeText');
+      const categorySelect = document.getElementById('category');
+      const difficultySelect = document.getElementById('difficulty');
+      const challengeList = document.getElementById('challengeList');
+      const challengeCount = document.getElementById('challengeCount');
+      const adminList = document.getElementById('adminList');
+      const adminCount = document.getElementById('adminCount');
+      const toast = document.getElementById('toast');
+      const filterTabs = document.getElementById('filterTabs');
+
+      // ---------- SAMPLE DATA ----------
+      function getSampleChallenges() {
+        return [
+          { id: '00421', username: 'CryptoKing', challenge: 'Wear a banana costume to the supermarket.', category: 'Funny', difficulty: 'Medium', status: 'submitted', votes: 4821, timestamp: Date.now() - 100000 },
+          { id: '00420', username: 'SurfGirl', challenge: 'Recreate a famous movie scene at the beach.', category: 'Creative', difficulty: 'Easy', status: 'shortlisted', votes: 3204, timestamp: Date.now() - 200000 },
+          { id: '00419', username: 'MemeLord', challenge: 'Eat a raw onion in public.', category: 'Embarrassing', difficulty: 'Hard', status: 'accepted', votes: 2993, timestamp: Date.now() - 300000 },
+          { id: '00418', username: 'FitBro', challenge: 'Do 100 push-ups in a mall.', category: 'Sport', difficulty: 'Medium', status: 'completed', votes: 2541, timestamp: Date.now() - 400000 },
+          { id: '00417', username: 'ChaosAlex', challenge: 'Let your pet choose your outfit for a day.', category: 'Random', difficulty: 'Easy', status: 'submitted', votes: 1876, timestamp: Date.now() - 500000 },
+          { id: '00416', username: 'WillWill', challenge: 'Sing the national anthem in a busy square.', category: 'Public', difficulty: 'Hard', status: 'shortlisted', votes: 1432, timestamp: Date.now() - 600000 }
+        ];
+      }
+
+      // ---------- SAVE ----------
+      function saveChallenges() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(challenges));
+        } catch (e) {
+          console.warn('Could not save', e);
+        }
+      }
+
+      // ---------- ESCAPE HTML ----------
+      function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // ---------- RENDER FEED ----------
+      function renderChallenges() {
+        // Filter
+        let filtered = [...challenges];
+        if (currentFilter !== 'all') {
+          filtered = filtered.filter(c => c.status === currentFilter);
+        }
+        // Sort newest first
+        filtered.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+        challengeCount.textContent = challenges.length;
+
+        if (filtered.length === 0) {
+          challengeList.innerHTML = `<div class="empty-feed">No challenges in this category.</div>`;
+        } else {
+          challengeList.innerHTML = filtered.map(item => {
+            const safeUser = escapeHtml(item.username || 'anon');
+            const safeChallenge = escapeHtml(item.challenge || '');
+            const safeCat = escapeHtml(item.category || 'Random');
+            const safeDiff = escapeHtml(item.difficulty || 'Medium');
+            const safeStatus = escapeHtml(item.status || 'submitted');
+            const statusClass = safeStatus.toLowerCase();
+            const diffClass = safeDiff.toLowerCase();
+
+            // Difficulty color
+            let diffBg = '#f1c40f';
+            if (diffClass === 'easy') diffBg = '#2ecc71';
+            else if (diffClass === 'medium') diffBg = '#f1c40f';
+            else if (diffClass === 'hard') diffBg = '#e67e22';
+            else if (diffClass === 'insane') diffBg = '#e74c3c';
+
+            return `
+              <div class="challenge-card" data-id="${item.id}">
+                <div class="card-top">
+                  <div class="user-info">
+                    <div class="avatar-sm"></div>
+                    @${safeUser}
+                  </div>
+                  <div class="status-badge ${statusClass}">${safeStatus}</div>
+                </div>
+                <div class="challenge-text">${safeChallenge}</div>
+                <div class="card-bottom">
+                  <div class="tags">
+                    <span class="tag category">${safeCat}</span>
+                    <span class="tag difficulty" style="background:${diffBg}; color:${diffClass === 'hard' || diffClass === 'insane' ? '#fff' : '#000'};">${safeDiff}</span>
+                  </div>
+                  <div class="stats">
+                    <span>▲ ${item.votes || 0}</span>
+                    <span>💬 12</span>
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="vote-btn" onclick="voteChallenge('${item.id}')">▲ VOTE</button>
+                  <button onclick="shareChallenge('${item.id}')">🔁 SHARE</button>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Update admin count
+        adminCount.textContent = challenges.length;
+        renderAdminList();
+      }
+
+      // ---------- RENDER ADMIN LIST ----------
+      function renderAdminList() {
+        if (challenges.length === 0) {
+          adminList.innerHTML = '<div style="color:#666; font-family:Arial; font-size:0.8rem; text-align:center; padding:10px;">No challenges</div>';
+          return;
+        }
+        // Show latest 8
+        const latest = [...challenges].sort((a,b) => (b.timestamp||0) - (a.timestamp||0)).slice(0, 8);
+        adminList.innerHTML = latest.map(item => `
+          <div class="admin-row">
+            <div class="challenge-snippet">#${item.id} @${escapeHtml(item.username)}: ${escapeHtml(item.challenge)}</div>
+            <div class="actions">
+              <button onclick="acceptChallenge('${item.id}')">✓</button>
+              <button onclick="completeChallenge('${item.id}')">✔✔</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // ---------- ADD CHALLENGE ----------
+      function addChallenge(username, challengeText, category, difficulty) {
+        let cleanUsername = username.trim();
+        if (cleanUsername.startsWith('@')) cleanUsername = cleanUsername.substring(1);
+        if (!cleanUsername) cleanUsername = 'anonymous';
+
+        const newChallenge = {
+          id: String(Math.floor(Math.random() * 90000) + 10000),
+          username: cleanUsername,
+          challenge: challengeText.trim(),
+          category: category,
+          difficulty: difficulty,
+          status: 'submitted',
+          votes: 0,
+          timestamp: Date.now()
+        };
+
+        challenges.unshift(newChallenge);
+        if (challenges.length > 100) challenges = challenges.slice(0, 100);
+        saveChallenges();
+        renderChallenges();
+        showToast('🔥 CHALLENGE ADDED! 🔥');
+      }
+
+      // ---------- TOAST ----------
+      function showToast(message) {
+        toast.textContent = message || '🔥 CHALLENGE ADDED! 🔥';
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+      }
+
+      // ---------- VOTE ----------
+      window.voteChallenge = function(id) {
+        const challenge = challenges.find(c => c.id === id);
+        if (challenge) {
+          challenge.votes = (challenge.votes || 0) + 1;
+          saveChallenges();
+          renderChallenges();
+          showToast('▲ VOTE COUNTED!');
+        }
+      };
+
+      // ---------- SHARE ----------
+      window.shareChallenge = function(id) {
+        const challenge = challenges.find(c => c.id === id);
+        if (challenge) {
+          const text = `I challenged @${challenge.username} to: "${challenge.challenge}" #ChallengeMe`;
+          if (navigator.share) {
+            navigator.share({ title: 'Challenge Me', text: text }).catch(() => {});
+          } else {
+            // Fallback: copy to clipboard
+            navigator.clipboard?.writeText(text).then(() => showToast('📋 COPIED TO CLIPBOARD!'));
+          }
+        }
+      };
+
+      // ---------- SHARE ON X (newspaper) ----------
+      window.shareOnX = function() {
+        const text = 'I just challenged @YOURACCOUNT to: Wear a banana costume to the supermarket. Let\'s see if he actually does it! 😂 #ChallengeMe';
+        if (navigator.share) {
+          navigator.share({ title: 'Challenge Me', text: text }).catch(() => {});
+        } else {
+          navigator.clipboard?.writeText(text).then(() => showToast('📋 COPIED TO CLIPBOARD!'));
+        }
+      };
+
+      // ---------- ACCEPT / COMPLETE (admin) ----------
+      window.acceptChallenge = function(id) {
+        const ch = challenges.find(c => c.id === id);
+        if (ch) {
+          ch.status = 'accepted';
+          saveChallenges();
+          renderChallenges();
+          showToast('✅ CHALLENGE ACCEPTED');
+        }
+      };
+
+      window.completeChallenge = function(id) {
+        const ch = challenges.find(c => c.id === id);
+        if (ch) {
+          ch.status = 'completed';
+          saveChallenges();
+          renderChallenges();
+          showToast('🏆 CHALLENGE COMPLETED!');
+        }
+      };
+
+      // ---------- EXPORT / RESET ----------
+      window.exportData = function() {
+        const dataStr = JSON.stringify(challenges, null, 2);
+        const blob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'challenge_me_backup.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('📤 DATA EXPORTED');
+      };
+
+      window.resetData = function() {
+        if (confirm('Reset all challenges? This cannot be undone.')) {
+          challenges = getSampleChallenges();
+          saveChallenges();
+          renderChallenges();
+          showToast('🗑 DATA RESET');
+        }
+      };
+
+      window.importData = function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.onchange = (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            try {
+              const imported = JSON.parse(ev.target.result);
+              if (Array.isArray(imported)) {
+                challenges = imported;
+                saveChallenges();
+                renderChallenges();
+                showToast('📥 DATA IMPORTED');
+              }
+            } catch (err) {
+              alert('Invalid JSON file');
+            }
+          };
+          reader.readAsText(file);
+        };
+        input.click();
+      };
+
+      window.downloadBackup = function() {
+        exportData();
+      };
+
+      window.restoreBackup = function() {
+        importData();
+      };
+
+      // ---------- LOAD SAMPLE ----------
+      window.loadSampleData = function() {
+        const samples = [
+          { username: 'chaos_queen', challenge: 'Eat a spoonful of cinnamon while doing a TikTok dance', category: 'Food', difficulty: 'Hard' },
+          { username: 'meme_lord', challenge: 'Call your crush and sing them the entire chorus of "All Star"', category: 'Embarrassing', difficulty: 'Insane' },
+          { username: 'sporty_spice', challenge: 'Do 50 push-ups in the middle of a busy crosswalk', category: 'Sport', difficulty: 'Hard' },
+          { username: 'random_rob', challenge: 'Wear your clothes backwards for an entire day and vlog it', category: 'Random', difficulty: 'Medium' },
+          { username: 'creative_kate', challenge: 'Paint your face like a clown and go grocery shopping', category: 'Creative', difficulty: 'Medium' },
+        ];
+        samples.forEach(s => {
+          challenges.push({
+            id: String(Math.floor(Math.random() * 90000) + 10000),
+            username: s.username,
+            challenge: s.challenge,
+            category: s.category,
+            difficulty: s.difficulty,
+            status: 'submitted',
+            votes: Math.floor(Math.random() * 3000),
+            timestamp: Date.now() - Math.floor(Math.random() * 10000000)
+          });
+        });
+        // Cap
+        if (challenges.length > 100) challenges = challenges.slice(0, 100);
+        saveChallenges();
+        renderChallenges();
+        showToast('🎲 SAMPLE CHAOS LOADED!');
+      };
+
+      // ---------- FORM SUBMIT ----------
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = usernameInput.value.trim();
+        const challengeText = challengeInput.value.trim();
+        if (!challengeText) { alert('Please write a challenge!'); return; }
+        addChallenge(username || 'anonymous', challengeText, categorySelect.value, difficultySelect.value);
+        usernameInput.value = '';
+        challengeInput.value = '';
+        categorySelect.value = 'Funny';
+        difficultySelect.value = 'Medium';
+        // Scroll to feed
+        document.querySelector('.feed-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // ---------- FILTER TABS ----------
+      filterTabs.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          filterTabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          currentFilter = e.target.dataset.filter;
+          renderChallenges();
+        }
+      });
+
+      // ---------- INITIAL RENDER ----------
+      renderChallenges();
+
+      // Make functions global for inline handlers
+      window.renderChallenges = renderChallenges;
+    })();
+  </script>
+</body>
+</html>
